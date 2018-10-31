@@ -24,6 +24,7 @@ import { Button } from "react-native-elements";
 import ImagePicker from "react-native-image-picker";
 import Imagehide from "./src/Imagehide";
 import ImageSlider from "./src/ImageSlider";
+import LinearGradient from "react-native-linear-gradient";
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
   android:
@@ -75,7 +76,10 @@ export default class App extends Component<Props> {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <ImageSlider />
+        {/* <LinearGradient colors={["#EC7063", "#9B59B6"]}>
+         
+        </LinearGradient> */}
+        <Search />
         {/* <Search />
         <Button
           title="BUTTON"

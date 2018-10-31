@@ -8,7 +8,7 @@ import {
   View,
   RefreshControl
 } from "react-native";
-
+import LinearGradient from "react-native-linear-gradient";
 const HEADER_MAX_HEIGHT = 300;
 const HEADER_MIN_HEIGHT = Platform.OS === "ios" ? 60 : 73;
 const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;

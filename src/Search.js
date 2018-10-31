@@ -2,7 +2,45 @@ import React, { Component } from "react";
 import { View, Text, TextInput, Image } from "react-native";
 import { Card } from "react-native-elements";
 import EvilIcons from "react-native-vector-icons/EvilIcons";
+import axios from "axios";
 class Search extends Component {
+  componentWillMount() {
+    axios
+      .get(
+        "http://eric.clst.org/assets/wiki/uploads/Stuff/gz_2010_us_040_00_500k.json",
+        {}
+      )
+      .then(res => res.data.features)
+      .then(features => {
+        console.log(features);
+        var i = 0;
+        const test = "Vamshi";
+        const multipolygon = features
+          .filter(f => f.geometry && f.geometry.type === "MultiPolygon")
+          .map(feature => {
+            const polygon = feature.geometry.coordinates.map(polygon => {
+              return <Polygon />;
+            });
+          });
+        // const polygon = features
+        //   .filter(f => f.geometry && f.geometry.type === "Polygon")
+        //   .map(feature => {
+        //     return feature.geometry.coordinates;
+        //   });
+
+        // const polyLine = features
+        //   .filter(f => f.geometry && f.geometry.type === "MultiPolyline")
+        //   .map(feature =>
+        //     feature.geometry.coordinates.map(poly => {
+        //       console.log(test, poly);
+        //     })
+        //   );
+        // console.log(polyLine);
+        // console.log("Polygon", polygon);
+        // console.log("MULTIPOLYGON", multipolygon);
+      })
+      .catch(e => console.log(e));
+  }
   render() {
     return (
       <View
