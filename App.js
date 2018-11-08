@@ -25,6 +25,7 @@ import ImagePicker from "react-native-image-picker";
 import Imagehide from "./src/Imagehide";
 import ImageSlider from "./src/ImageSlider";
 import LinearGradient from "react-native-linear-gradient";
+import Lottie from "./src/Lottie";
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
   android:
@@ -79,7 +80,8 @@ export default class App extends Component<Props> {
         {/* <LinearGradient colors={["#EC7063", "#9B59B6"]}>
          
         </LinearGradient> */}
-        <Search />
+        {/* <Search /> */}
+        <Lottie />
         {/* <Search />
         <Button
           title="BUTTON"
