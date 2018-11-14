@@ -20,12 +20,16 @@ import Weather from "./src/Weather";
 import ForecastItem from "./src/ForecastItem";
 import Layers from "./src/Layers";
 import Search from "./src/Search";
-import { Button } from "react-native-elements";
+import { Button, Card } from "react-native-elements";
 import ImagePicker from "react-native-image-picker";
+import Payment from "./src/Payment";
 import Imagehide from "./src/Imagehide";
 import ImageSlider from "./src/ImageSlider";
 import LinearGradient from "react-native-linear-gradient";
 import Lottie from "./src/Lottie";
+import Ball from "./src/Animations/Ball";
+import Deck from "./src/Animations/Deck";
+import NewPayment from "./src/NewPayment";
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
   android:
@@ -50,6 +54,18 @@ export default class App extends Component<Props> {
       avatarSource: "",
       show: false
     };
+  }
+  renderCard(item, index) {
+    return (
+      <Card key={index} title={item.text} image={{ uri: item.uri }}>
+        <Text style={{ marginBottom: 10 }}>Futher customization</Text>
+        <Button
+          icon={{ name: "code" }}
+          backgroundColor="#03A9F4"
+          title="View Now!"
+        />
+      </Card>
+    );
   }
   pickImage() {
     ImagePicker.showImagePicker(options, response => {
@@ -78,10 +94,12 @@ export default class App extends Component<Props> {
     return (
       <SafeAreaView style={styles.container}>
         {/* <LinearGradient colors={["#EC7063", "#9B59B6"]}>
-         
         </LinearGradient> */}
         {/* <Search /> */}
-        <Lottie />
+        {/* <Lottie /> */}
+        <Payment />
+        {/* <Ball /> */}
+        {/* <Deck data={DATA} renderCard={this.renderCard} /> */}
         {/* <Search />
         <Button
           title="BUTTON"
@@ -134,3 +152,45 @@ const styles = StyleSheet.create({
     marginBottom: 5
   }
 });
+const DATA = [
+  {
+    id: 1,
+    text: "Card #1",
+    uri: "http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-04.jpg"
+  },
+  {
+    id: 2,
+    text: "Card #2",
+    uri: "http://www.fluxdigital.co/wp-content/uploads/2015/04/Unsplash.jpg"
+  },
+  {
+    id: 3,
+    text: "Card #3",
+    uri: "http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-09.jpg"
+  },
+  {
+    id: 4,
+    text: "Card #4",
+    uri: "http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-01.jpg"
+  },
+  {
+    id: 5,
+    text: "Card #5",
+    uri: "http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-04.jpg"
+  },
+  {
+    id: 6,
+    text: "Card #6",
+    uri: "http://www.fluxdigital.co/wp-content/uploads/2015/04/Unsplash.jpg"
+  },
+  {
+    id: 7,
+    text: "Card #7",
+    uri: "http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-09.jpg"
+  },
+  {
+    id: 8,
+    text: "Card #8",
+    uri: "http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-01.jpg"
+  }
+];

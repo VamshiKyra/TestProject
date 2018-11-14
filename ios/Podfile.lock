@@ -1,6 +1,10 @@
 PODS:
   - BVLinearGradient (2.4.3):
     - React
+  - lottie-ios (2.5.0)
+  - lottie-react-native (2.5.9):
+    - lottie-ios
+    - React
   - React (0.57.3):
     - React/Core (= 0.57.3)
   - React/Core (0.57.3):
@@ -24,6 +28,8 @@ PODS:
 
 DEPENDENCIES:
   - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
+  - lottie-ios (from `../node_modules/lottie-ios`)
+  - lottie-react-native (from `../node_modules/lottie-react-native`)
   - React/Core (from `../node_modules/react-native`)
   - React/DevSupport (from `../node_modules/react-native`)
   - React/RCTImage (from `../node_modules/react-native`)
@@ -34,6 +40,10 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   BVLinearGradient:
     :path: "../node_modules/react-native-linear-gradient"
+  lottie-ios:
+    :path: "../node_modules/lottie-ios"
+  lottie-react-native:
+    :path: "../node_modules/lottie-react-native"
   React:
     :path: "../node_modules/react-native"
   yoga:
@@ -41,9 +51,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   BVLinearGradient: 6d8909e3fc6b089defa4b89d967441fa6827a2ee
+  lottie-ios: 9f24be3ecb13412223b6ac70d97437742b0e3de1
+  lottie-react-native: db4bd75685428c4ad0ec2f913145abff3d38b640
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: 867c4814cfa98aa6979cf3120b8da550bc891d18
+PODFILE CHECKSUM: 2e58c096a7927437b440e1e5944e27beb12605ac
 
 COCOAPODS: 1.5.3
